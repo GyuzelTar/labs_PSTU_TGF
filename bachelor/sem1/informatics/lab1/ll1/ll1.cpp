@@ -60,6 +60,6 @@ int main()
     cout << fixed << setprecision(10);
     calcfloat();
     calcdouble();
-    calcmn;
+    calcmn();
     return 0;
 }
