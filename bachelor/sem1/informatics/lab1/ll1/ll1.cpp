@@ -6,7 +6,7 @@ void calcfloat()
     setlocale(LC_ALL, "RU");
     float af, bf, cf, df, ef, ff, gf;
     af = 1000;
-    bf = 0.0001;
+    bf = 0.0001; 
     cf = (af + bf) * (af + bf) * (af + bf); //вычеслим первую часть числителя
     df = (af * af * af) + (3 * (af * af) * bf); //вычеслим вторую часть числителя
     ef = cf - df; //вычеслим чеслитель 
