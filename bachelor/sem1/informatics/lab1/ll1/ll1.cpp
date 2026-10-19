@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-using namespace std;
+using namespace std; 
 void calcfloat()
 {
     setlocale(LC_ALL, "RU");
