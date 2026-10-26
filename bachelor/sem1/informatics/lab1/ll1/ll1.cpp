@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 ﻿#include <iostream>
 #include <cmath>
+=======
+#include <iostream>
+>>>>>>> e408c053cc86ceaf0250c0e15f1d6226140a1896
 #include <iomanip>
-using namespace std;
+using namespace std; 
 void calcfloat()
 {
     setlocale(LC_ALL, "RU");
