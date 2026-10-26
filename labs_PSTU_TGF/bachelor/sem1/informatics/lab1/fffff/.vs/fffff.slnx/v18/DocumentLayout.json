@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u0413\u044E\u0437\u0435\u043B\u044C\\Desktop\\labs_PSTU_TGF\\labs_PSTU_TGF\\bachelor\\sem1\\informatics\\lab1\\fffff\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{153CDF7C-C70E-401B-8141-E7A6975A9511}|fffff.vcxproj|C:\\Users\\\u0413\u044E\u0437\u0435\u043B\u044C\\Desktop\\labs_PSTU_TGF\\labs_PSTU_TGF\\bachelor\\sem1\\informatics\\lab1\\fffff\\ggggg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{153CDF7C-C70E-401B-8141-E7A6975A9511}|fffff.vcxproj|solutionrelative:ggggg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ggggg.cpp",
+              "DocumentMoniker": "C:\\Users\\\u0413\u044E\u0437\u0435\u043B\u044C\\Desktop\\labs_PSTU_TGF\\labs_PSTU_TGF\\bachelor\\sem1\\informatics\\lab1\\fffff\\ggggg.cpp",
+              "RelativeDocumentMoniker": "ggggg.cpp",
+              "ToolTip": "C:\\Users\\\u0413\u044E\u0437\u0435\u043B\u044C\\Desktop\\labs_PSTU_TGF\\labs_PSTU_TGF\\bachelor\\sem1\\informatics\\lab1\\fffff\\ggggg.cpp",
+              "RelativeToolTip": "ggggg.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-14T06:43:31.278Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
