@@ -1,10 +1,12 @@
 ﻿#include <iostream>
 #include <cmath>
 #include <iomanip>
+#include <clocale>
 using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "RU");
     const int N = 10;       // количество членов ряда
     double a = 1.0;         // a1 = 1!/1^sqrt(1) = 1
     double s = 0.0;         // сумма ряда
