@@ -1,52 +1,54 @@
 ﻿#include <iostream>
 #include <clocale>
 using namespace std;
-
+// Вывод массива в одну строку через табуляцию
 void print_arr(const int* A, const int& N)
 {
-    setlocale (LC_ALL, "Russian");
-    for (int k = 0; k < N; k++)
-        cout << A[k] << "\t";
-    cout << endl;
+    setlocale(LC_ALL, "Russian");
+    for (int k = 0; k < N; k++)      // проходим по всем элементам слева направо
+        cout << A[k] << "\t";        // печатаем элемент и табуляцию
+    cout << endl;                    // перевод строки после последнего элемента
 }
 
 // Сортировка вставкой
-// A - массив, i - индекс в неотсортированной части,
-// j - индекс в отсортированной части, Y - переносимый элемент,
-// F - флажок "место для Y ещё не найдено"
+// Массив делится на отсортированную часть (слева) и неотсортированную (справа).
+// На каждом шаге берём первый элемент неотсортированной части
+// и вставляем его на нужное место в отсортированной.
 void insert_sort(int* A, const int& N)
 {
-    setlocale (LC_ALL, "Russian");
-    for (int i = 1; i < N; i++)
+    setlocale(LC_ALL, "Russian");
+    for (int i = 1; i < N; i++)      // A[0] уже считается отсортированной частью
     {
-        int Y = A[i];
-        int j = i - 1;
-        bool F = true;
+        int Y = A[i];                // запоминаем переносимый элемент
+        int j = i - 1;               // идём по отсортированной части справа налево
+        bool F = true;               // true: место для Y ещё не найдено
         while (j >= 0 && F)
         {
-            if (A[j] > Y)
+            if (A[j] > Y)            // элемент больше Y
             {
-                A[j + 1] = A[j];
-                j--;
+                A[j + 1] = A[j];     // сдвигаем его вправо, освобождая место
+                j--;                 // переходим к следующему слева
             }
             else
-                F = false;
+                F = false;           // нашли элемент <= Y, место найдено
         }
-        A[j + 1] = Y;
+        A[j + 1] = Y;                // вставляем Y на освободившееся место
     }
 }
 
 // Сортировка выбором
+// На каждом шаге ищем минимум в неотсортированной части
+// и ставим его в начало этой части.
 void selection_sort(int* A, const int& N)
 {
-    setlocale (LC_ALL, "Russian");
-    for (int i = 0; i < N - 1; i++)
+    setlocale(LC_ALL, "Russian");
+    for (int i = 0; i < N - 1; i++)  // i: позиция, куда встанет очередной минимум
     {
-        int min = i;
+        int min = i;                 // предполагаем, что минимум стоит на месте i
         for (int j = i + 1; j < N; j++)
-            if (A[j] < A[min])
-                min = j;
-        if (min != i)
+            if (A[j] < A[min])       // нашли элемент меньше текущего минимума
+                min = j;             // запоминаем его индекс
+        if (min != i)                // меняем местами, только если минимум не на своём месте
         {
             int temp = A[i];
             A[i] = A[min];
@@ -56,14 +58,16 @@ void selection_sort(int* A, const int& N)
 }
 
 // Сортировка пузырьком (обменом)
+// Соседние элементы сравниваются и меняются местами, если стоят неправильно.
+// После каждого прохода самый большой элемент «всплывает» в конец.
 void bubble_sort(int* A, const int& N)
 {
-    setlocale (LC_ALL, "Russian");
-    for (int i = 0; i < N - 1; i++)
-        for (int j = 0; j < N - i - 1; j++)
-            if (A[j] > A[j + 1])
+    setlocale(LC_ALL, "Russian");
+    for (int i = 0; i < N - 1; i++)          // i: сколько элементов уже стоит на местах в конце
+        for (int j = 0; j < N - i - 1; j++)  // последние i элементов не проверяем
+            if (A[j] > A[j + 1])             // пара стоит в неверном порядке
             {
-                int temp = A[j];
+                int temp = A[j];             // обмениваем соседей
                 A[j] = A[j + 1];
                 A[j + 1] = temp;
             }
@@ -71,20 +75,20 @@ void bubble_sort(int* A, const int& N)
 
 int main()
 {
-    setlocale (LC_ALL, "Russian");
+    setlocale(LC_ALL, "Russian");           // русская локаль для вывода
     const int N = 6;
-    int base[N] = { 5, 2, 9, 1, 7, 3 };
-    int a[N], b[N], c[N];
+    int base[N] = { 5, 2, 9, 1, 7, 3 };      // исходный массив, остаётся неизменным
+    int a[N], b[N], c[N];                    // три копии: по одной на каждую сортировку
     for (int k = 0; k < N; k++) a[k] = b[k] = c[k] = base[k];
 
     cout << "Исходный массив:" << endl;
     print_arr(base, N);
 
-    insert_sort(a, N);
+    insert_sort(a, N);                       // сортируем первую копию вставкой
     cout << "Вставка:" << endl;   print_arr(a, N);
-    selection_sort(b, N);
+    selection_sort(b, N);                    // вторую выбором
     cout << "Выбор:" << endl;     print_arr(b, N);
-    bubble_sort(c, N);
+    bubble_sort(c, N);                       // третью пузырьком
     cout << "Пузырёк:" << endl;   print_arr(c, N);
     return 0;
 }
